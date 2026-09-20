@@ -710,3 +710,53 @@ h1 span,h1 em,h2 span,h2 em,h2 strong{background:none!important;-webkit-backgrou
 /* Responsividade comum dos elementos alterados. */
 .hero-copy,.em-card-copy,.services-tabs,.service-panel,.formato-card,.faq-grid>*{min-width:0}
 @media(max-width:600px){.floating-wa{width:56px;height:56px;right:16px;bottom:16px}.hero-copy h1{white-space:normal!important}}
+
+/* =========================================================
+   V23 — correções EXCLUSIVAMENTE MOBILE
+   Nada desta revisão altera tablet ou desktop.
+   ========================================================= */
+@media (max-width: 599px){
+  html,body{overflow-x:clip}
+
+  /* 1. Barra amarela: três níveis visuais sem corte. */
+  .emergency-bar{height:auto!important;min-height:0;padding:8px 16px;font-size:13px;place-items:stretch}
+  .emergency-bar .container{width:100%;padding:0;margin:0 auto}
+  .emergency-bar-inner{height:auto!important;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;overflow:visible}
+  .emergency-bar .emergency-phone{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;margin:0;text-align:center;white-space:normal!important;overflow:visible!important;text-overflow:clip!important;font-size:0;line-height:1.35}
+  .emergency-bar .emergency-phone::before{content:"Atendimento de emergência 24 horas";display:block;font:600 13px/1.35 var(--fonte-corpo);white-space:normal}
+  .emergency-bar .emergency-phone strong{display:block;font:700 14px/1.35 var(--fonte-corpo);white-space:normal}
+  .emergency-bar .emergency-phone strong::before{content:"Ligue agora: ";font-weight:600}
+  .emergency-bar .emergency-whatsapp{display:none!important}
+
+  /* 2. Banner: foto no topo, sem gradiente lateral e com dissolução inferior. */
+  .hero{height:auto;min-height:0;padding:0;background:#000814;overflow:hidden}
+  .hero-media{position:relative!important;inset:auto!important;width:100%;height:300px!important;overflow:hidden;background:#001D3D;z-index:0}
+  .hero-media picture{display:block;width:100%;height:100%;font-size:0;color:transparent}
+  .hero-media .hero-image{display:block!important;width:100%!important;height:100%!important;max-width:none;object-fit:cover!important;object-position:72% center!important;opacity:1!important;visibility:visible!important;transform:none!important;margin:0!important;font-size:0!important;color:transparent!important}
+  .hero-media::after{content:"";position:absolute;z-index:2;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 0%,transparent 62%,rgba(0,8,20,.52) 78%,#000814 100%)!important}
+  .hero-shade{display:none!important;background:none!important}
+  .hero-cursor-glow{display:none!important}
+
+  /* 3. Conteúdo do banner rigorosamente centralizado. */
+  .hero .container{width:100%;padding-left:20px;padding-right:20px;margin-inline:auto}
+  .hero-grid{height:auto;min-height:0;margin-top:-60px!important;display:block;position:relative;z-index:4}
+  .hero-copy{width:100%;max-width:none;padding:0 0 48px;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .hero-copy .eyebrow{width:fit-content;margin:0 auto 20px;justify-content:center;text-align:center}
+  .hero-copy h1{width:100%;max-width:100%;margin:0 auto 20px;font-size:1.9rem!important;line-height:1.2!important;text-align:center;text-wrap:balance;white-space:normal!important}
+  .hero-copy p{width:100%;max-width:340px;margin:0 auto 28px;font-size:1rem;text-align:center;line-height:1.55}
+  .hero-copy .hero-actions{display:flex;flex-direction:column;width:100%;max-width:100%;gap:12px;margin:0 auto}
+  .hero-copy .hero-actions .btn,.hero-copy .btn-giant,.hero-copy .btn-outline{width:100%!important;min-width:0!important;height:52px!important;min-height:52px!important;padding-inline:18px;justify-content:center;text-align:center}
+  .hero-copy .btn-giant{position:relative;gap:10px}
+  .hero-copy .btn-giant b{position:absolute;right:18px}
+  .hero-copy .btn-outline{gap:8px}
+  .floating-wa{width:52px!important;height:52px!important;right:16px!important;bottom:16px!important}
+  .floating-wa img{width:26px;height:26px}
+
+  /* 4. Diferenciais: duas colunas regulares e alinhamento interno idêntico. */
+  .hero-trust{width:100%;max-width:100%;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;column-gap:16px!important;row-gap:16px!important;margin:28px auto 0;align-items:stretch;text-align:left}
+  .hero-trust>div,.hero-trust>div:last-child{grid-column:auto!important;min-width:0;display:flex!important;align-items:center!important;justify-content:flex-start;gap:10px!important;text-align:left}
+  .hero-trust .trust-icon{flex:0 0 24px!important;width:24px!important;min-width:24px!important;height:24px!important;display:grid;place-items:center;margin:0;color:#FFC300!important;font-size:20px!important;line-height:1!important;text-align:center}
+  .hero-trust p{min-width:0;margin:0!important;font:500 clamp(13px,3.6vw,14px)/1.3 var(--fonte-corpo)!important;color:rgba(255,255,255,.85);white-space:normal!important;overflow:visible!important;word-break:normal!important;overflow-wrap:normal!important;hyphens:none!important;text-align:left}
+  .hero-trust strong{font:inherit;font-weight:500;color:inherit;white-space:normal}
+}
+
